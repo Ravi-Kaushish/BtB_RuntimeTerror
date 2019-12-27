@@ -21,13 +21,8 @@ import {
   render,
   TouchableOpacity
 } from "react-native";
-// import App from '../App';
 
-// class Lists{
-// const List: () => React$Node = () => {
 class List extends Component {
-
-  // static nav
   data = {
     categoryName: "Category",
     imageUri: require("../../assets/images/home.jpg"),
@@ -40,12 +35,6 @@ class List extends Component {
     state: "delhi",
     country: "india"
   };
-
-  // <ListDetails categoryName="Category"
-  // imageUri={require('./assets/home.jpg')}
-  // name="NGO Name" phoneNumber="+91-123456788"
-  //  email="abc@xyz" address="address 1" city="City" pinCode="Pin Code"
-  //  state="State" country="Country"></ListDetails>
 
   render() {
     return (
@@ -60,7 +49,6 @@ class List extends Component {
         onPress={() => {
           this.props.data.category = this.props.category
           this.props.data.imageUri = this.props.imageUri
-          console.log("working");
           this.props.listDetail(this.props.data)
         }}
       >
@@ -74,9 +62,6 @@ class List extends Component {
           <Text style={{ paddingLeft: 25, paddingTop: 10 }}>
             {this.props.name}
           </Text>
-          {/* <Text style={{ paddingLeft: 25, paddingBottom: 10 }}>
-            {this.props.distance}
-          </Text> */}
         </View>
       </TouchableOpacity>
     );
@@ -95,6 +80,4 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     flex: 1
   }
-  //  imageContainer:{},
-  //  subHeadingsContainer:{},
 });

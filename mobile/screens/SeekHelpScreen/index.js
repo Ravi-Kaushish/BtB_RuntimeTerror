@@ -30,7 +30,6 @@ class SeekHelpScreen extends Component {
   _getLocation = async () => {
     const { status } = await Permissions.askAsync(Permissions.LOCATION);
     if (status !== 'granted') {
-      console.log('Permission to access location was denied')
     }
     const Currentlocation = await Location.getCurrentPositionAsync();
     this.setState({location:Currentlocation})
@@ -39,7 +38,6 @@ class SeekHelpScreen extends Component {
   //Submit the rescue request with info and UserLocation
   onSeekHelpHandler = () => {
     let location = this._getLocation()
-    //console.log(this.state.location)
     alert("You're request has been raised, Help is on the way!")
   };
 

@@ -30,10 +30,10 @@ class ListScreen extends Component {
   };
 
   state = {
-    NGOUri: require("../../assets/images/home.jpg"),
-    RescueRequestsUri: require("../../assets/images/home.jpg"),
-    GovtShelterUri: require("../../assets/images/home.jpg"),
-    PrivatePropertyUri: require("../../assets/images/home.jpg"),
+    NGOUri: require("../../assets/images/1.png"),
+    RescueRequestsUri: require("../../assets/images/4.png"),
+    GovtShelterUri: require("../../assets/images/2.jpg"),
+    PrivatePropertyUri: require("../../assets/images/3.jpg"),
     listNGO: "",
     listGovtShelter: "",
     listPrivateProperties: "",
@@ -60,7 +60,6 @@ class ListScreen extends Component {
 
   onRefresh = async () => {
     const token = await getData("token");
-    console.log("token", token);
     if (typeof token !== "undefined") {
       const privateProperties = await this.apiCallGet(
         baseURL + listPrivateProperties,
@@ -101,7 +100,7 @@ class ListScreen extends Component {
                 return (
                   <List
                     key={index}
-                    imageUri={this.state.NGOUri}
+                    imageUri={this.state.PrivatePropertyUri}
                     category={"Private Properties"}
                     name={item.AccomodationType}
                     distance={item.Id}
@@ -130,7 +129,7 @@ class ListScreen extends Component {
                 return (
                   <List
                     key={index}
-                    imageUri={this.state.NGOUri}
+                    imageUri={this.state.RescueRequestsUri}
                     category={"Rescue Request"}
                     name={item.AccomodationType}
                     distance={item.Id}
@@ -190,7 +189,7 @@ class ListScreen extends Component {
                       <List
                         key={index}
                         category={"Government Shelters"}
-                        imageUri={this.state.NGOUri}
+                        imageUri={this.state.GovtShelterUri}
                         name={item.AccomodationType}
                         distance={item.Id}
                         data={item}

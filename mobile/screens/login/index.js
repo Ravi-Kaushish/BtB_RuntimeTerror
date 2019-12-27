@@ -32,7 +32,6 @@ class SigninScreen extends Component {
     const apiRes = await res.json();
 
     if (apiRes.errorMessage) {
-      console.log("jkgipyigy", apiRes);
       alert("NO account with that email");
     } else {
       storData("token", apiRes.data.Token);

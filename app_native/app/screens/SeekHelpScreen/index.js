@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, TextInput, Button, ScrollView, Image } from 'react-native';
-import Geolocation from '@react-native-community/geolocation';
+//import Geolocation from '@react-native-community/geolocation';
 import Textarea from 'react-native-textarea';
 import AashrayLogo from "../../assets/icons/AashrayLogo.png";
 import styles from "./styles";

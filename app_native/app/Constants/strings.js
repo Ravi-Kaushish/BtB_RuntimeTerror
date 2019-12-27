@@ -42,9 +42,7 @@ const strings={
      Used: "Used:",
      Remaining: "Remaining:",
      RequestedBy: "Requested By:",
-     RequestSentTo: "Request Sent To:",
-     
-
-
- }
+     RequestSentTo: "Request Sent To:"
+ };
+ 
 export default strings;

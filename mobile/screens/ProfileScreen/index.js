@@ -99,7 +99,6 @@ class ProfileScreen extends React.Component {
       this.props.navigation.navigate("Login");
     } else {
       const decodedtOken = getDecodedToken(token);
-      // console.log(decodedtOken);
       this.setState({
         userType: decodedtOken.UserTypeId === 4 ? "NGO" : "user",
         decodedID: decodedtOken.id,
@@ -110,7 +109,6 @@ class ProfileScreen extends React.Component {
           baseURL + ngoProfile + this.state.decodedID,
           token
         );
-        //  console.log("res",apiRes)
         this.setState({
           personalDetailNGO: {
             AuthorityName: apiRes.data.userDetails.AuthorityName,
@@ -144,7 +142,6 @@ class ProfileScreen extends React.Component {
           baseURL + userProfile + this.state.decodedID,
           token
         );
-        // console.log(apiRes);
         this.setState({
           personalDetailsUser: {
             FullName:
@@ -188,7 +185,6 @@ class ProfileScreen extends React.Component {
   };
 
   updatePersonalDetail = async () => {
-    console.log("Type = ", this.state.userType);
     if (this.state.userType === "NGO") {
       let dataToupdateNgo = {
         userdetails: {
@@ -199,7 +195,6 @@ class ProfileScreen extends React.Component {
           Email: this.state.Email_ID
         }
       };
-      console.log(dataToupdateNgo);
       let apiUpdatedRes = await this.callUpdateAPI(
         baseURL + updateNGO + this.state.decodedID,
         this.state.headerToken,
@@ -214,7 +209,6 @@ class ProfileScreen extends React.Component {
   };
 
   updateAddressDetail = async () => {
-    console.log("address");
     if (this.state.userType === "NGO") {
       let dataToupdateAddress = {
         addressdetails: {
@@ -224,7 +218,6 @@ class ProfileScreen extends React.Component {
           pincode: this.state.AddressDetails.pincode
         }
       };
-      // console.log(dataToupdateNgo);
       let apiUpdatedRes = await this.callUpdateAPI(
         baseURL + updateNGO + this.state.decodedID,
         this.state.headerToken,

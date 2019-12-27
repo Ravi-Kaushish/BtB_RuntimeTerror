@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 
 import CardView from 'react-native-cardview' ;
-import Help from '../../component';
+import Help from '../../component/OfferedHelp';
 import addButtonLogo from "../../assets/images/add-circle.png";
 import styles from './styles';
 

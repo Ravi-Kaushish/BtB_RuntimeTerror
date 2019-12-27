@@ -26,9 +26,6 @@ export default class ListDetails extends Component {
   state = this.props.navigation.state.params;
 
   render() {
-    {
-      console.log(this.props.navigation.state.params);
-    }
     const { navigation } = this.props;
     NGO = (
       <View style={styles.mainContainer}>
@@ -180,32 +177,10 @@ export default class ListDetails extends Component {
             <Image source={this.state.imageUri} style={styles.image} />
           </View>
           <View>
-            {/* <View style={styles.callButton}>
-              <Button
-                title={this.state.Phone1 ? this.state.Phone1.toString() : ""}
-                color="white"
-                overrides={true}
-                theme="dark"
-              ></Button>
-            </View> */}
-            {/* <View style={styles.callButton}>
-              <Button
-                title={this.state.Phone2 ? this.state.Phone2.toString() : ""}
-                color="white"
-              >
-                <Text style={{ color: "#ff0000" }}></Text>
-              </Button>
-            </View>
-            <View style={styles.callButton}>
-              <Button
-                title={this.state.Phone3 ? this.state.Phone3.toString() : ""}
-                color="white"
-              ></Button>
-            </View> */}
           </View>
         </View>
         <View style={styles.subContainer3}>
-          <Text style={styles.Name}>{"RequestTime : " + this.state.RequestTime}</Text>
+          <Text style={styles.Name}>{"RequestTime : " + this.state.ResponseTime}</Text>
           <Text style={styles.Name}>
             {"Raised By : " + this.state.RaisedByUser}
           </Text>
